@@ -1,0 +1,33 @@
+.button {
+  padding: 12px 18px;
+  background-color: #efb8c8;
+  border: none;
+  border-radius: 4px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  color: #1c1a27;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions-right {
+  display: flex;
+  gap: 10px;
+}
+
+.white-button {
+  padding: 12px 18px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 4px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  color: #1c1a27;
+}

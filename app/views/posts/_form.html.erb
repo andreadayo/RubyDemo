@@ -1,26 +1,36 @@
-<%= form_for @post do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-      <ul>
-        <% @post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<!DOCTYPE html>
+<html>
+<head>
+  <%= stylesheet_link_tag 'form' %>
+</head>
+
+<body>
+  <%= form_for @post do |f| %>
+    <% if @post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+        <ul>
+          <% @post.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :title, class: "label" %><br>
+      <%= f.text_field :title, placeholder: "Enter your title here", class: "title-field"%>
+    </div>
+
+    <div class="field">
+      <%= f.label :body, class: "label" %><br>
+      <%= f.text_area :body, placeholder: "Enter your content here", class: "body-field"%>
+    </div>
+
+    <div class="actions">
+      <%= link_to 'Back', posts_path, class: "white-button" %>
+      <%= f.submit "Submit", class: "button" %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</body>
+</html>

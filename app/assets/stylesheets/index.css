@@ -1,3 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: #fff;
+}
+
+body {
+  padding: 40px 80px;
+  font-family: "Inter", sans-serif;
+
+  --dot-bg: #1c1a27;
+  --dot-color: #8b85b0;
+  --dot-size: 1px;
+  --dot-space: 22px;
+  background: linear-gradient(
+        90deg,
+        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+        transparent 1%
+      )
+      center / var(--dot-space) var(--dot-space),
+    linear-gradient(
+        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
+        transparent 1%
+      )
+      center / var(--dot-space) var(--dot-space),
+    var(--dot-color);
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.blog-title-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.blog-title-img {
+  width: auto;
+  height: 40px;
+}
+
 .blog-title {
-  color: red;
+  color: #efb8c8;
+}
+
+.button {
+  padding: 12px 18px;
+  background-color: #efb8c8;
+  border: none;
+  border-radius: 4px;
+}
+
+.new-post-button {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  color: #1c1a27;
+}
+
+.post-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.post {
+  width: 100%;
+  height: auto;
+  padding: 24px;
+  border: 2px solid #333040;
+  border-radius: 8px;
+  background-color: #262434;
+}
+
+.post-title {
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #efb8c8;
+}
+
+.post-title:hover {
+  color: #d5a3b1;
+}
+
+.post-date {
+  font-size: 12px;
+  font-style: italic;
+  color: #abaaaa;
+}
+
+.post-body {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }

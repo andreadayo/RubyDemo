@@ -21,18 +21,27 @@ class PostsController < ApplicationController
     end
   end
 
-  def update
-  if @post.update(post_params)
-    redirect_to @post, notice: 'Post was successfully updated.'
-  else
-    render :edit
+  def edit
+    # Retrieve the existing record to edit
+    @post = Post.find(params[:id])
   end
-end
 
-def destroy
-  @post.destroy
-  redirect_to posts_url, notice: 'Post was successfully destroyed.'
-end
+  def update
+    # Retrieve the existing record to update
+    @post = Post.find(params[:id])
+
+    # Update the attributes based on the form submission
+    if @post.update(post_params)
+      redirect_to @post, notice: 'Post was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @post.destroy
+    redirect_to posts_url, notice: 'Post was successfully destroyed.'
+  end
 
   private
 
